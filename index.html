@@ -22,7 +22,7 @@
   <header class="nav">
     <nav class="nav__left" aria-label="Main">
       <a href="#top" data-for="top">Home</a>
-      <a href="#ch-bec" data-for="ch-bec ch-steak ch-raffi ch-caesar ch-matcha ch-menu">Menu</a>
+      <a href="#ch-menu" data-for="ch-menu ch-bec ch-steak ch-raffi ch-caesar ch-matcha">Menu</a>
       <a href="#ch-midtown" data-for="ch-midtown ch-harlem">Locations</a>
       <a href="#ch-catering" data-for="ch-catering" data-open-cater>Catering</a>
     </nav>
@@ -44,7 +44,7 @@
         <a class="obj" href="#ch-harlem" style="--l:7;--t:62;--w:20;--ar:1.297;--i:1">
           <span class="obj__sil" style="--m:url(assets/obj/space-sil.webp)"></span><img class="obj__ink" src="assets/obj/space-ink.webp" alt=""><span class="obj__label">135th St</span>
         </a>
-        <a class="obj" href="#ch-bec" data-feature style="--l:39;--t:24;--w:22.8;--ar:.812;--i:2">
+        <a class="obj" href="#ch-menu" data-feature style="--l:39;--t:24;--w:22.8;--ar:.812;--i:2">
           <span class="obj__sil" style="--m:url(assets/obj/menu-sil.webp)"></span><img class="obj__ink" src="assets/obj/menu-ink.webp" alt=""><span class="obj__label">The menu</span>
         </a>
         <button class="obj" type="button" data-open-order style="--l:64;--t:1;--w:18;--ar:1.001;--i:3">
@@ -59,6 +59,44 @@
         <a class="obj" href="mailto:info@uptaco.nyc" data-contact style="--l:78;--t:41;--w:15;--ar:1.026;--i:6">
           <span class="obj__sil" style="--m:url(assets/obj/contact-sil.webp)"></span><img class="obj__ink" src="assets/obj/contact-ink.webp" alt=""><span class="obj__label">Contact</span>
         </a>
+      </div>
+    </section>
+
+    <!-- 0. The menu, as a receipt, first after the hero -->
+    <section class="band band--tall" id="ch-menu" style="--c:var(--white)" data-navc="#ffffff">
+      <span class="icon" style="--ar:.812"><span class="obj__sil" style="--m:url(assets/obj/menu-sil.webp)"></span><img class="obj__ink" src="assets/obj/menu-ink.webp" alt=""></span>
+      <h2 class="glow">the menu</h2>
+      <div class="receipt">
+        <p class="receipt__head">UPTACO / 550 MADISON AVE<br>BREAKFAST TACOS, BURRITOS, WRAPS</p>
+        <h3>Tacos</h3>
+        <ul>
+          <li><span>Classic</span><i></i><b>6.00</b></li>
+          <li><span>BEC</span><i></i><b>6.50</b></li>
+          <li><span>Impossible chorizo (vegan)</span><i></i><b>6.50</b></li>
+        </ul>
+        <h3>Burritos</h3>
+        <ul>
+          <li><span>OG Classic</span><i></i><b>12.00</b></li>
+          <li><span>The Jacob</span><i></i><b>14.00</b></li>
+          <li><span>The Raffi</span><i></i><b>16.00</b></li>
+        </ul>
+        <h3>Wraps and salad</h3>
+        <ul>
+          <li><span>Chicken Caesar wrap</span><i></i><b>14.00</b></li>
+          <li><span>Chicken Goddess wrap</span><i></i><b>14.00</b></li>
+          <li><span>Caesar salad</span><i></i><b>11.50</b></li>
+        </ul>
+        <h3>Drinks</h3>
+        <ul>
+          <li><span>Iced matcha latte</span><i></i><b>7.00</b></li>
+          <li><span>Iced strawberry matcha</span><i></i><b>7.50</b></li>
+          <li><span>Iced blue coconut matcha</span><i></i><b>8.00</b></li>
+          <li><span>Monthly special matcha</span><i></i><b>8.50</b></li>
+          <li><span>Refreshers</span><i></i><b>6.50</b></li>
+          <li><span>Lemonade, black tea, Arnold Palmer</span><i></i><b>4.50</b></li>
+        </ul>
+        <p class="receipt__foot">Harlem's menu differs a little.<br>Each shop's order page has its current list.<br>*** THANK YOU ***</p>
+        <button class="see" type="button" data-open-order>Order pickup →</button>
       </div>
     </section>
 
@@ -134,44 +172,6 @@
         <p class="glow glow--sm" aria-hidden="true">matcha</p>
         <p class="hl"><span>Whisked to order and poured over strawberry milk, blue coconut milk, or plain. A new flavor every month. From $7.</span></p>
         <button class="see" type="button" data-open-order>Order one →</button>
-      </div>
-    </section>
-
-    <!-- 4. The menu, as a receipt -->
-    <section class="band band--tall" id="ch-menu" style="--c:var(--white)" data-navc="#ffffff">
-      <span class="icon" style="--ar:.812"><span class="obj__sil" style="--m:url(assets/obj/menu-sil.webp)"></span><img class="obj__ink" src="assets/obj/menu-ink.webp" alt=""></span>
-      <h2 class="glow">the menu</h2>
-      <div class="receipt">
-        <p class="receipt__head">UPTACO / 550 MADISON AVE<br>BREAKFAST TACOS, BURRITOS, WRAPS</p>
-        <h3>Tacos</h3>
-        <ul>
-          <li><span>Classic</span><i></i><b>6.00</b></li>
-          <li><span>BEC</span><i></i><b>6.50</b></li>
-          <li><span>Impossible chorizo (vegan)</span><i></i><b>6.50</b></li>
-        </ul>
-        <h3>Burritos</h3>
-        <ul>
-          <li><span>OG Classic</span><i></i><b>12.00</b></li>
-          <li><span>The Jacob</span><i></i><b>14.00</b></li>
-          <li><span>The Raffi</span><i></i><b>16.00</b></li>
-        </ul>
-        <h3>Wraps and salad</h3>
-        <ul>
-          <li><span>Chicken Caesar wrap</span><i></i><b>14.00</b></li>
-          <li><span>Chicken Goddess wrap</span><i></i><b>14.00</b></li>
-          <li><span>Caesar salad</span><i></i><b>11.50</b></li>
-        </ul>
-        <h3>Drinks</h3>
-        <ul>
-          <li><span>Iced matcha latte</span><i></i><b>7.00</b></li>
-          <li><span>Iced strawberry matcha</span><i></i><b>7.50</b></li>
-          <li><span>Iced blue coconut matcha</span><i></i><b>8.00</b></li>
-          <li><span>Monthly special matcha</span><i></i><b>8.50</b></li>
-          <li><span>Refreshers</span><i></i><b>6.50</b></li>
-          <li><span>Lemonade, black tea, Arnold Palmer</span><i></i><b>4.50</b></li>
-        </ul>
-        <p class="receipt__foot">Harlem's menu differs a little.<br>Each shop's order page has its current list.<br>*** THANK YOU ***</p>
-        <button class="see" type="button" data-open-order>Order pickup →</button>
       </div>
     </section>
 
