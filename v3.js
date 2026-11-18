@@ -105,7 +105,11 @@
   im.querySelectorAll('[data-im-open]').forEach(b => b.addEventListener('click', () => { opener = b; imOpen(b.dataset.imOpen); }));
   im.querySelectorAll('[data-im-close]').forEach(b => b.addEventListener('click', imClose));
   im.addEventListener('keydown', e => { if (e.key === 'Escape' && im.classList.contains('is-chatting')) imClose(); });
-  fold.addEventListener('click', () => fold.setAttribute('aria-expanded', fold.getAttribute('aria-expanded') === 'true' ? 'false' : 'true'));
+  const toggleFold = () => fold.setAttribute('aria-expanded', fold.getAttribute('aria-expanded') === 'true' ? 'false' : 'true');
+  fold.addEventListener('click', e => { e.stopPropagation(); toggleFold(); });
+  im.querySelector('[data-buddy-title]').addEventListener('click', toggleFold);
+  /* Phones start with the buddy list folded to its title bar so it covers less of the page. */
+  if (matchMedia('(max-width: 760px)').matches) fold.setAttribute('aria-expanded', 'false');
   const raffiFrame = document.querySelector('#im-raffi iframe');
   const botOrigin = new URL(raffiFrame.dataset.src).origin;
   addEventListener('message', e => { if (e.origin === botOrigin && e.source === raffiFrame.contentWindow && e.data?.type === 'uptaco-raffi-close') imClose(); });
