@@ -22,7 +22,7 @@
   <header class="nav">
     <nav class="nav__left" aria-label="Main">
       <a href="#top" data-for="top">Home</a>
-      <a href="#ch-menu" data-for="ch-bec ch-raffi ch-matcha ch-menu">Menu</a>
+      <a href="#ch-menu" data-for="ch-bec ch-steak ch-raffi ch-caesar ch-matcha ch-menu">Menu</a>
       <a href="#ch-midtown" data-for="ch-midtown ch-harlem">Locations</a>
       <a href="#ch-catering" data-for="ch-catering" data-open-cater>Catering</a>
     </nav>
@@ -59,13 +59,19 @@
         <a class="obj" href="#ch-harlem" style="--l:1;--t:52;--w:18;--ar:1.297;--i:6">
           <span class="obj__sil" style="--m:url(assets/obj/space-sil.webp)"></span><img class="obj__ink" src="assets/obj/space-ink.webp" alt=""><span class="obj__label">135th St</span>
         </a>
-        <button class="obj" type="button" data-open-order style="--l:59;--t:44;--w:16;--ar:.978;--i:7">
+        <button class="obj" type="button" data-open-order style="--l:56;--t:47;--w:14;--ar:.978;--i:7">
           <span class="obj__sil" style="--m:url(assets/obj/order-sil.webp)"></span><img class="obj__ink" src="assets/obj/order-ink.webp" alt=""><span class="obj__label">Order now</span>
         </button>
-        <a class="obj" href="#ch-catering" data-open-cater style="--l:80;--t:52;--w:12;--ar:.729;--i:8">
+        <a class="obj" href="#ch-catering" data-open-cater style="--l:84;--t:52;--w:12;--ar:.729;--i:8">
           <span class="obj__sil" style="--m:url(assets/obj/catering-sil.webp)"></span><img class="obj__ink" src="assets/obj/catering-ink.webp" alt=""><span class="obj__label">Catering</span>
         </a>
-        <a class="obj" href="mailto:info@uptaco.nyc" data-contact style="--l:66.5;--t:4;--w:13;--ar:1.026;--i:9">
+        <a class="obj" href="#ch-steak" style="--l:70.5;--t:40;--w:12;--ar:.789;--i:9">
+          <span class="obj__sil" style="--m:url(assets/obj/steak-sil.webp)"></span><img class="obj__ink" src="assets/obj/steak-ink.webp" alt=""><span class="obj__label">Steak Tacos</span>
+        </a>
+        <a class="obj" href="#ch-caesar" style="--l:42;--t:74;--w:15;--ar:2.148;--i:10">
+          <span class="obj__sil" style="--m:url(assets/obj/caesar-sil.webp)"></span><img class="obj__ink" src="assets/obj/caesar-ink.webp" alt=""><span class="obj__label">Caesar Wrap</span>
+        </a>
+        <a class="obj" href="mailto:info@uptaco.nyc" data-contact style="--l:66.5;--t:4;--w:13;--ar:1.026;--i:11">
           <span class="obj__sil" style="--m:url(assets/obj/contact-sil.webp)"></span><img class="obj__ink" src="assets/obj/contact-ink.webp" alt=""><span class="obj__label">Contact</span>
         </a>
       </div>
@@ -86,6 +92,20 @@
       </div>
     </section>
 
+    <!-- 1b. Steak tacos (new) -->
+    <section class="band" id="ch-steak" style="--c:var(--lavender)" data-navc="#ad7bb3">
+      <span class="icon" style="--ar:.789"><span class="obj__sil" style="--m:url(assets/obj/steak-sil.webp)"></span><img class="obj__ink" src="assets/obj/steak-ink.webp" alt=""></span>
+      <h2 class="glow">steak tacos</h2>
+    </section>
+    <section class="media media--wide" data-navc="#02060d" aria-label="Steak tacos">
+      <div class="media__bg media__bg--sharp"><video class="vid" data-src="assets/video/steak-wide.mp4" data-src-portrait="assets/video/steak-tall.mp4" poster="assets/video/steak-wide.jpg" muted playsinline loop preload="none" aria-label="Salsa and pico going onto sliced steak tacos"></video></div>
+      <div class="media__text">
+        <p class="glow glow--sm" aria-hidden="true">new</p>
+        <p class="hl"><span>Grilled steak on guacamole, with onion, cilantro, and red salsa, in a flour tortilla. Lime on the side.</span></p>
+        <button class="see" type="button" data-open-order>Order →</button>
+      </div>
+    </section>
+
     <!-- 2. The Raffi -->
     <section class="band" id="ch-raffi" style="--c:var(--eggplant)" data-navc="#3d2136">
       <span class="icon" style="--ar:1.186"><span class="obj__sil" style="--m:url(assets/obj/raffi-sil.webp)"></span><img class="obj__ink" src="assets/obj/raffi-ink.webp" alt=""></span>
@@ -97,6 +117,21 @@
       <div class="media__text">
         <p class="glow glow--sm" aria-hidden="true">the raffi</p>
         <p class="hl"><span>Slow-smoked brisket, eggs, house-pickled onion, and potato, wrapped by hand in lilac paper. Raffi is our friend. He likes brisket a lot. $16.</span></p>
+        <button class="see" type="button" data-open-order>Order one →</button>
+      </div>
+    </section>
+
+    <!-- 2b. Caesar wrap -->
+    <section class="band" id="ch-caesar" style="--c:var(--apricot)" data-navc="#f29871">
+      <span class="icon icon--wide" style="--ar:2.148"><span class="obj__sil" style="--m:url(assets/obj/caesar-sil.webp)"></span><img class="obj__ink" src="assets/obj/caesar-ink.webp" alt=""></span>
+      <h2 class="glow">caesar wrap</h2>
+    </section>
+    <section class="media" data-navc="#02060d" aria-label="Chicken Caesar wrap">
+      <div class="media__bg"><video class="vid" data-src="assets/video/caesar-hd.mp4" poster="assets/video/caesar-hd.jpg" muted playsinline loop preload="none"></video></div>
+      <figure class="media__card media__card--45"><video class="vid" data-src="assets/video/caesar-hd.mp4" poster="assets/video/caesar-hd.jpg" muted playsinline loop preload="none" aria-label="Crispy chicken tossed with romaine, rolled, and cut in half"></video></figure>
+      <div class="media__text">
+        <p class="glow glow--sm" aria-hidden="true">the caesar</p>
+        <p class="hl"><span>Crispy chicken, romaine, cucumber, croutons, and Caesar dressing, rolled in a flour tortilla. $14 at 550 Madison.</span></p>
         <button class="see" type="button" data-open-order>Order one →</button>
       </div>
     </section>
@@ -181,7 +216,7 @@
     </section>
     <section class="media" data-navc="#02060d" aria-label="Harlem shop">
       <div class="media__bg"><img src="assets/img/harlem.webp" alt="" loading="lazy"></div>
-      <figure class="media__card"><img src="assets/img/harlem.webp" alt="Inside the Uptaco cafe on 135th Street" loading="lazy"></figure>
+      <figure class="media__card"><img src="assets/img/harlem-tee.webp" alt="A barista in a Breakfast Taco Club Harlem tee holding an iced coffee" loading="lazy"></figure>
       <div class="media__text">
         <p class="glow glow--sm" aria-hidden="true">135th st</p>
         <p class="hl"><span>300 W 135th St, at St. Nicholas Ave. Open daily 7a-7p.</span></p>
@@ -278,16 +313,29 @@
     <iframe class="cater__frame" title="Uptaco catering order site" data-src="https://uptaco.gethoneycart.com/?menu=1&amp;order_type=1"></iframe>
   </dialog>
 
-  <!-- Raffi the catering bot, dressed as a 2001 instant messenger. -->
+  <!-- Chat buddies, dressed as a 2001 instant messenger: Raffi (catering, live bot) and UptacoInfo (scripted answers). -->
   <div class="im" data-im>
-    <button class="buddy" type="button" data-im-open aria-expanded="false" aria-controls="im-window">
-      <span class="win__title"><span>Buddy List</span><i aria-hidden="true">_</i></span>
-      <span class="buddy__body">
-        <span class="buddy__group" aria-hidden="true">▾ Buddies (1/1)</span>
-        <span class="buddy__row"><img src="assets/obj/raffi-bot.svg" alt=""><span><b>RaffiCateringBot</b><small>Here to help with catering orders</small></span></span>
-      </span>
-    </button>
-    <section class="win imwin" id="im-window" role="dialog" aria-label="Chat with Raffi the catering bot" hidden>
+    <section class="win buddy" aria-label="Buddy list">
+      <div class="win__title"><span>Buddy List</span><span class="win__btns"><button type="button" data-buddy-fold aria-label="Fold buddy list" aria-expanded="true">_</button></span></div>
+      <div class="buddy__body">
+        <span class="buddy__group" aria-hidden="true">▾ Buddies (2/2)</span>
+        <button class="buddy__row" type="button" data-im-open="im-info" aria-controls="im-info"><img src="assets/obj/contact-ink.webp" alt=""><span><b>UptacoInfo</b><small>Hours, locations, menu</small></span></button>
+        <button class="buddy__row" type="button" data-im-open="im-raffi" aria-controls="im-raffi"><img src="assets/obj/raffi-bot.svg" alt=""><span><b>RaffiCateringBot</b><small>Catering orders and quotes</small></span></button>
+      </div>
+    </section>
+
+    <section class="win imwin" id="im-info" role="dialog" aria-label="Chat with UptacoInfo" hidden>
+      <div class="win__title"><span>UptacoInfo - Instant Message</span><span class="win__btns"><button type="button" data-im-close aria-label="Minimize chat">_</button><button type="button" data-im-close aria-label="Close chat">×</button></span></div>
+      <p class="imwin__menu" aria-hidden="true"><span>File</span><span>Edit</span><span>Insert</span><span>People</span></p>
+      <p class="imwin__warn" aria-hidden="true">UptacoInfo's warning level: 0%</p>
+      <div class="imwin__frame info">
+        <div class="info__log" aria-live="polite"></div>
+        <div class="info__choices" aria-label="Suggested questions"></div>
+      </div>
+      <form class="info__form"><label class="sr" for="info-q">Your message</label><input id="info-q" autocomplete="off" maxlength="200" placeholder="Ask about hours, menu, delivery"><button type="submit">Send</button></form>
+    </section>
+
+    <section class="win imwin" id="im-raffi" role="dialog" aria-label="Chat with Raffi the catering bot" hidden>
       <div class="win__title"><span>RaffiCateringBot - Instant Message</span><span class="win__btns"><button type="button" data-im-close aria-label="Minimize chat">_</button><button type="button" data-im-close aria-label="Close chat">×</button></span></div>
       <p class="imwin__menu" aria-hidden="true"><span>File</span><span>Edit</span><span>Insert</span><span>People</span></p>
       <p class="imwin__warn" aria-hidden="true">RaffiCateringBot's warning level: 0%</p>
