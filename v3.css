@@ -66,8 +66,8 @@ h1, h2, h3, p, figure { margin: 0; }
 @property --navc { syntax: "<color>"; inherits: true; initial-value: #ad7bb3; }
 
 /* Field of objects */
-.field { position: relative; min-height: 100svh; padding: 110px var(--gutter) 60px; background: var(--lavender); display: grid; align-items: center; }
-.stage { position: relative; width: 100%; aspect-ratio: 1440 / 700; }
+.field { position: relative; min-height: 100svh; padding: 100px var(--gutter) 50px; background: var(--lavender); display: grid; align-items: center; }
+.stage { position: relative; width: min(100%, calc((100svh - 170px) * 1440 / 860)); margin-inline: auto; aspect-ratio: 1440 / 860; }
 .obj { position: absolute; left: calc(var(--l) * 1%); top: calc(var(--t) * 1%); width: calc(var(--w) * 1%); aspect-ratio: var(--ar); display: block; padding: 0; border: 0; background: none; text-decoration: none; animation: appear .7s cubic-bezier(.2,1.4,.4,1) backwards; animation-delay: calc(.25s + var(--i) * .09s); transition: rotate .25s cubic-bezier(.3,1.6,.5,1), scale .25s cubic-bezier(.3,1.6,.5,1); }
 @keyframes appear { from { opacity: 0; transform: scale(.7) rotate(-6deg); } }
 .obj__sil, .obj__ink { position: absolute; inset: 0; width: 100%; height: 100%; }
@@ -207,7 +207,7 @@ main { position: relative; }
   .nav__clock { display: none; }
   .nav__right button, .nav.is-light .nav__right button { background: var(--apricot); color: var(--ink); padding: 8px 10px; text-shadow: none; box-shadow: inset 0 0 0 2px var(--ink); }
   .field { padding-top: 96px; padding-bottom: 120px; align-items: center; }
-  .stage { aspect-ratio: auto; display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 26px 18px; align-items: center; justify-items: center; }
+  .stage { width: 100%; aspect-ratio: auto; display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 26px 18px; align-items: center; justify-items: center; }
   .stage .obj { width: 74%; }
   .stage .obj[data-feature] { grid-column: 1 / -1; width: 40%; }
   .obj { position: relative; left: auto; top: auto; width: 100%; }
