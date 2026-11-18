@@ -97,7 +97,7 @@ main { position: relative; }
 .media__card { position: absolute; top: 50%; left: 50%; transform: translate(-50%, -50%); height: min(82svh, 820px); aspect-ratio: 9 / 16; box-shadow: 0 30px 80px rgba(0,0,0,.5); }
 .media__card--45 { aspect-ratio: 1080 / 1410; }
 .media__card video, .media__card img { width: 100%; height: 100%; object-fit: cover; }
-.media__text { position: relative; z-index: 2; display: grid; justify-items: center; gap: 18px; padding: 0 var(--gutter); }
+.media__text { position: relative; z-index: 3; display: grid; justify-items: center; gap: 18px; padding: 0 var(--gutter); }
 .media .links { display: flex; flex-wrap: wrap; justify-content: center; gap: 8px; }
 /* Each later band and panel stacks above the earlier ones. */
 
@@ -214,6 +214,10 @@ main { position: relative; }
   .nav .wide { display: none; }
   .obj__label { opacity: 1; font-size: 14px; line-height: 1.15; padding: 5px 8px; top: auto; bottom: -10px; transform: translateX(-50%); white-space: normal; width: max-content; max-width: 118%; text-align: center; }
   .media__card { display: none; }
+  /* Text sits at the bottom on phones so it does not cover the food in the middle of each video. */
+  .media { place-items: end center; }
+  .media__text { padding-bottom: 64px; }
+  .media::after { content: ""; position: absolute; inset: auto 0 0 0; height: 45%; background: linear-gradient(transparent, rgba(2,6,13,.55)); pointer-events: none; }
   .media__bg video, .media__bg img { filter: brightness(.6); transform: none; }
   .ugc { grid-template-columns: repeat(2, minmax(0, 1fr)); }
   .cater { width: 100vw; height: 100dvh; margin: 0; }
