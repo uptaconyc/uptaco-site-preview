@@ -73,15 +73,21 @@
   const flip = document.querySelector('[data-flip]');
   const flipBtn = document.querySelector('[data-flip-btn]');
   const [front, back] = flip.querySelectorAll('.receipt');
+  const menuTitle = document.querySelector('.menu-title');
+  const menuWord = menuTitle.querySelector('[data-menu-word]');
   flipBtn.addEventListener('click', () => {
     const toBack = !flip.classList.contains('is-flipped');
     flip.classList.toggle('is-flipped', toBack);
-    flip.classList.remove('to-back', 'to-front');
-    if (!reduce) { void flip.offsetWidth; flip.classList.add(toBack ? 'to-back' : 'to-front'); }
     front.inert = toBack; back.inert = !toBack;
     flipBtn.setAttribute('aria-pressed', String(toBack));
     flipBtn.textContent = toBack ? 'Flip to 550 Madison ↻' : 'Flip to Harlem ↻';
+    const word = toBack ? 'harlem' : 'madison';
+    if (reduce) { menuWord.textContent = word; return; }
+    flip.classList.remove('is-lifting'); void flip.offsetWidth; flip.classList.add('is-lifting');
+    menuTitle.classList.add('is-swapping');
+    setTimeout(() => { menuWord.textContent = word; menuTitle.classList.remove('is-swapping'); }, 380);
   });
+  flip.addEventListener('animationend', () => flip.classList.remove('is-lifting'));
 
   /* Catering: scroll to the catering chapter and open the order site in a popup over it. */
   const cater = document.getElementById('cater');
