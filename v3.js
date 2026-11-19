@@ -69,6 +69,20 @@
   sheet.querySelector('[data-close-order]').addEventListener('click', () => sheet.close());
   sheet.addEventListener('click', e => { if (e.target === sheet) sheet.close(); });
 
+  /* Menu receipt: flip between 550 Madison and Harlem. The hidden side is inert so it can't take focus or clicks. */
+  const flip = document.querySelector('[data-flip]');
+  const flipBtn = document.querySelector('[data-flip-btn]');
+  const [front, back] = flip.querySelectorAll('.receipt');
+  flipBtn.addEventListener('click', () => {
+    const toBack = !flip.classList.contains('is-flipped');
+    flip.classList.toggle('is-flipped', toBack);
+    flip.classList.remove('to-back', 'to-front');
+    if (!reduce) { void flip.offsetWidth; flip.classList.add(toBack ? 'to-back' : 'to-front'); }
+    front.inert = toBack; back.inert = !toBack;
+    flipBtn.setAttribute('aria-pressed', String(toBack));
+    flipBtn.textContent = toBack ? 'Flip to 550 Madison ↻' : 'Flip to Harlem ↻';
+  });
+
   /* Catering: scroll to the catering chapter and open the order site in a popup over it. */
   const cater = document.getElementById('cater');
   const caterFrame = cater.querySelector('iframe');
