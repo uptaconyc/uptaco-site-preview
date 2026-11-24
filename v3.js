@@ -73,31 +73,26 @@
   const flip = document.querySelector('[data-flip]');
   const flipBtn = document.querySelector('[data-flip-btn]');
   const [front, back] = flip.querySelectorAll('.receipt');
-  const menuTitle = document.querySelector('.menu-title');
-  const menuWord = menuTitle.querySelector('[data-menu-word]');
   flipBtn.addEventListener('click', () => {
     const toBack = !flip.classList.contains('is-flipped');
     flip.classList.toggle('is-flipped', toBack);
     front.inert = toBack; back.inert = !toBack;
     flipBtn.setAttribute('aria-pressed', String(toBack));
     flipBtn.textContent = toBack ? 'Flip to 550 Madison ↻' : 'Flip to Harlem ↻';
-    const word = toBack ? 'harlem' : 'madison';
-    if (reduce) { menuWord.textContent = word; return; }
+    if (reduce) return;
     flip.classList.remove('is-lifting'); void flip.offsetWidth; flip.classList.add('is-lifting');
-    menuTitle.classList.add('is-swapping');
-    setTimeout(() => { menuWord.textContent = word; menuTitle.classList.remove('is-swapping'); }, 380);
   });
   flip.addEventListener('animationend', () => flip.classList.remove('is-lifting'));
 
-  /* Catering: scroll to the catering chapter and open the order site in a popup over it. */
+  /* Catering: jump to the catering chapter and open the order site in a popup over it. */
   const cater = document.getElementById('cater');
   const caterFrame = cater.querySelector('iframe');
   document.querySelectorAll('[data-open-cater]').forEach(a => a.addEventListener('click', e => {
     e.preventDefault();
     if (sheet.open) sheet.close();
-    document.getElementById('ch-catering').scrollIntoView({ behavior: reduce ? 'auto' : 'smooth' });
+    document.getElementById('ch-catering').scrollIntoView();
     if (!caterFrame.src) caterFrame.src = caterFrame.dataset.src;
-    setTimeout(() => cater.showModal(), reduce ? 0 : 450);
+    cater.showModal();
   }));
   cater.querySelector('[data-close-cater]').addEventListener('click', () => cater.close());
   cater.addEventListener('click', e => { if (e.target === cater) cater.close(); });
@@ -141,7 +136,7 @@
   const A = {
     hours: () => `550 Madison: Mon to Fri 7:30 to 16:30, Sat and Sun 9:00 to 15:00. ${document.querySelector('[data-status]').textContent}\nHarlem, 300 W 135th St: open daily 7a-7p.`,
     where: () => `Midtown: in the plaza at 550 Madison Ave, at 55th St. <a href="https://www.google.com/maps/search/?api=1&query=Uptaco%20550%20Madison&query_place_id=ChIJxcR6lTRZwokRZkNGNwDnqWg" target="_blank" rel="noopener">Directions</a>\nHarlem: 300 W 135th St, at St. Nicholas Ave. <a href="https://www.google.com/maps/search/?api=1&query=Uptaco%20Harlem&query_place_id=ChIJe1i32DD3wokR-xW3HBseZqo" target="_blank" rel="noopener">Directions</a>`,
-    menu: () => 'Breakfast tacos (Classic $6, BEC $6.50, vegan Impossible chorizo $6.50), new steak tacos, burritos (OG Classic $12, The Jacob $14, The Raffi $16), the Chicken Caesar wrap with grilled or crispy chicken ($14), and matcha drinks. Those are 550 Madison prices; Harlem\'s are a little lower. <a href="#ch-menu" data-info-go>See the full menu</a>',
+    menu: () => 'Breakfast tacos (Classic, BEC, vegan Impossible chorizo), new steak tacos, burritos (OG Classic, The Jacob, The Raffi), the Chicken Caesar wrap with grilled or crispy chicken, and matcha drinks. Harlem also has a full Devoción coffee bar. This month\'s specials are ube matcha and grilled cheese with tomato soup. <a href="#ch-menu" data-info-go>See the core menu</a>',
     order: () => 'Pickup: <a href="https://uptaco.square.site/" target="_blank" rel="noopener">550 Madison</a> or <a href="https://uptaco-harlem.square.site/" target="_blank" rel="noopener">Harlem</a>. Delivery: both shops are on Uber Eats and Grubhub.',
     delivery: () => 'Both shops deliver through <a href="https://www.ubereats.com/store/uptaco-breakfast-tacos/6b2GD1yUUbuNowE0SgrO_w" target="_blank" rel="noopener">Uber Eats (Midtown)</a>, <a href="https://www.ubereats.com/store/uptaco-harlem/AueXmDLRV8mxy-oOGY_NQQ" target="_blank" rel="noopener">Uber Eats (Harlem)</a>, and Grubhub. For a group order, ask my buddy RaffiCateringBot.',
     vegan: () => 'The Impossible chorizo taco is vegan. For an allergy, email <a href="mailto:info@uptaco.nyc">info@uptaco.nyc</a> before you order and the team will answer for your specific case.',

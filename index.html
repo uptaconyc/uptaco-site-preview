@@ -22,14 +22,14 @@
   <header class="nav">
     <nav class="nav__left" aria-label="Main">
       <a href="#top" data-for="top">Home</a>
-      <a href="#ch-menu" data-for="ch-menu ch-bec ch-steak ch-raffi ch-caesar ch-matcha">Menu</a>
+      <a href="#ch-menu" data-for="ch-menu ch-bec ch-steak ch-raffi ch-caesar ch-matcha ch-specials">Menu</a>
       <a href="#ch-midtown" data-for="ch-midtown ch-harlem">Locations</a>
       <a href="#ch-catering" data-for="ch-catering" data-open-cater>Catering</a>
     </nav>
     <a class="nav__logo" href="#top" aria-label="Uptaco home"><span class="mark mark--horizontal" aria-hidden="true"></span></a>
     <div class="nav__right">
       <span class="nav__clock"><span data-clock>--:--</span> NYC</span>
-      <button type="button" data-open-order>Order<span class="wide"> (2 shops)</span></button>
+      <button class="nav__order" type="button" data-open-order>Order</button>
     </div>
   </header>
 
@@ -45,7 +45,7 @@
           <span class="obj__sil" style="--m:url(assets/obj/space-sil.webp)"></span><img class="obj__ink" src="assets/obj/space-ink.webp" alt=""><span class="obj__label">135th St</span>
         </a>
         <a class="obj" href="#ch-menu" data-feature style="--l:39;--t:24;--w:22.8;--ar:.812;--i:2">
-          <span class="obj__sil" style="--m:url(assets/obj/menu-sil.webp)"></span><img class="obj__ink" src="assets/obj/menu-ink.webp" alt=""><span class="obj__label">The menu</span>
+          <span class="obj__sil" style="--m:url(assets/obj/menu-sil.webp)"></span><img class="obj__ink" src="assets/obj/menu-ink.webp" alt=""><span class="obj__label">Core menu</span>
         </a>
         <button class="obj" type="button" data-open-order style="--l:64;--t:1;--w:18;--ar:1.001;--i:3">
           <span class="obj__sil" style="--m:url(assets/obj/bec-sil.webp)"></span><img class="obj__ink" src="assets/obj/bec-ink.webp" alt=""><span class="obj__label">Order now</span>
@@ -56,81 +56,105 @@
         <a class="obj" href="#ch-town" style="--l:40;--t:71;--w:12;--ar:.656;--i:5">
           <span class="obj__sil" style="--m:url(assets/obj/town-sil.webp)"></span><img class="obj__ink" src="assets/obj/town-ink.webp" alt=""><span class="obj__label">Around town</span>
         </a>
+        <a class="obj" href="#ch-specials" style="--l:27.5;--t:35;--w:10.5;--ar:.643;--i:7">
+          <span class="obj__sil" style="--m:url(assets/obj/specials-sil.webp)"></span><img class="obj__ink" src="assets/obj/specials-ink.webp" alt=""><span class="obj__label">Monthly specials</span>
+        </a>
         <a class="obj" href="mailto:info@uptaco.nyc" data-contact style="--l:78;--t:41;--w:15;--ar:1.026;--i:6">
           <span class="obj__sil" style="--m:url(assets/obj/contact-sil.webp)"></span><img class="obj__ink" src="assets/obj/contact-ink.webp" alt=""><span class="obj__label">Contact</span>
         </a>
       </div>
     </section>
 
-    <!-- 0. The menu, as a receipt, first after the hero -->
+    <!-- 0. The core menu, as a receipt with no prices, first after the hero -->
     <section class="band band--tall" id="ch-menu" style="--c:var(--white)" data-navc="#ffffff">
       <span class="icon" style="--ar:.812"><span class="obj__sil" style="--m:url(assets/obj/menu-sil.webp)"></span><img class="obj__ink" src="assets/obj/menu-ink.webp" alt=""></span>
-      <h2 class="glow menu-title"><span data-menu-word>madison</span> menu</h2>
+      <h2 class="glow">core menu</h2>
       <button class="see see--ink flip__btn" type="button" data-flip-btn aria-pressed="false">Flip to Harlem ↻</button>
       <div class="flip" data-flip>
         <div class="flip__inner">
       <div class="receipt receipt--front">
-        <p class="receipt__head">UPTACO / 550 MADISON AVE<br>BREAKFAST TACOS, BURRITOS, WRAPS</p>
+        <p class="receipt__head">UPTACO / 550 MADISON AVE<br>CORE MENU</p>
         <h3>Tacos</h3>
         <ul>
-          <li><span>Classic</span><i></i><b>6.00</b></li>
-          <li><span>BEC</span><i></i><b>6.50</b></li>
-          <li><span>Impossible chorizo (vegan)</span><i></i><b>6.50</b></li>
+          <li><span>Classic</span><em>Egg, Yukon gold potato, cheddar and jack, scallion</em></li>
+          <li><span>BEC</span><em>Applewood bacon, egg, cheddar and jack, scallion</em></li>
+          <li><span>Impossible chorizo</span><em>Vegan. Refried pinto beans, caramelized onion, peppers, pickled daikon</em></li>
         </ul>
         <h3>Burritos</h3>
         <ul>
-          <li><span>OG Classic</span><i></i><b>12.00</b></li>
-          <li><span>The Jacob</span><i></i><b>14.00</b></li>
-          <li><span>The Raffi</span><i></i><b>16.00</b></li>
+          <li><span>OG Classic</span><em>Egg, cheddar and jack, potato, red pepper, avocado, caramelized onion</em></li>
+          <li><span>The Jacob</span><em>Bacon, egg, pico de gallo, cheddar and jack, potato, avocado</em></li>
+          <li><span>The Raffi</span><em>Smoked brisket, egg, pickled onion, cheddar and jack, potato</em></li>
         </ul>
         <h3>Wraps and salad</h3>
         <ul>
-          <li><span>Chicken Caesar wrap</span><i></i><b>14.00</b></li>
-          <li><span>Chicken Goddess wrap</span><i></i><b>14.00</b></li>
-          <li><span>Caesar salad</span><i></i><b>11.50</b></li>
+          <li><span>Chicken Caesar wrap</span><em>Grilled or crispy chicken, romaine, cucumber, Caesar dressing</em></li>
+          <li><span>Chicken Goddess wrap</span><em>Kale, black beans, corn, pumpkin seeds, cotija, goddess dressing</em></li>
+          <li><span>Caesar salad</span><em>Romaine, cucumber, parmesan, house croutons</em></li>
         </ul>
         <h3>Drinks</h3>
-        <ul>
-          <li><span>Iced matcha latte</span><i></i><b>7.00</b></li>
-          <li><span>Iced strawberry matcha</span><i></i><b>7.50</b></li>
-          <li><span>Iced blue coconut matcha</span><i></i><b>8.00</b></li>
-          <li><span>Monthly special matcha</span><i></i><b>8.50</b></li>
-          <li><span>Refreshers</span><i></i><b>6.50</b></li>
-          <li><span>Lemonade, black tea, Arnold Palmer</span><i></i><b>4.50</b></li>
+        <ul class="plain">
+          <li><span>Iced matcha latte</span></li>
+          <li><span>Iced strawberry matcha</span></li>
+          <li><span>Iced blue coconut matcha</span></li>
+          <li><span>Matcha lemonade</span></li>
+          <li><span>Monthly special matcha</span></li>
+          <li><span>Refreshers</span></li>
+          <li><span>Lemonade, black tea, Arnold Palmer</span></li>
         </ul>
-        <p class="receipt__foot">Prices are for 550 Madison.<br>Flip the receipt for Harlem.<br>*** THANK YOU ***</p>
+        <p class="receipt__foot">Flip the receipt for Harlem<br>and the coffee bar.<br>*** THANK YOU ***</p>
         <button class="see" type="button" data-open-order>Order pickup →</button>
       </div>
       <div class="receipt receipt--back" inert>
-        <p class="receipt__head">UPTACO / 300 W 135TH ST<br>BREAKFAST TACOS, BURRITOS, WRAPS</p>
+        <p class="receipt__head">UPTACO / 300 W 135TH ST<br>CORE MENU</p>
         <h3>Tacos</h3>
         <ul>
-          <li><span>Classic</span><i></i><b>6.00</b></li>
-          <li><span>BEC</span><i></i><b>6.00</b></li>
-          <li><span>Impossible chorizo (vegan)</span><i></i><b>6.00</b></li>
+          <li><span>Classic</span><em>Egg, Yukon gold potato, cheddar and jack, scallion</em></li>
+          <li><span>BEC</span><em>Applewood bacon, egg, cheddar and jack, scallion</em></li>
+          <li><span>Impossible chorizo</span><em>Vegan. Refried pinto beans, caramelized onion, peppers, pickled daikon</em></li>
         </ul>
         <h3>Burritos</h3>
         <ul>
-          <li><span>OG Classic</span><i></i><b>11.00</b></li>
-          <li><span>The Jacob</span><i></i><b>13.00</b></li>
-          <li><span>The Raffi</span><i></i><b>15.00</b></li>
+          <li><span>OG Classic</span><em>Egg, cheddar and jack, potato, red pepper, avocado, caramelized onion</em></li>
+          <li><span>The Jacob</span><em>Bacon, egg, pico de gallo, cheddar and jack, potato, avocado</em></li>
+          <li><span>The Raffi</span><em>Smoked brisket, egg, pickled onion, cheddar and jack, potato</em></li>
         </ul>
         <h3>Wraps and salad</h3>
         <ul>
-          <li><span>Chicken Caesar wrap</span><i></i><b>13.00</b></li>
-          <li><span>Chicken Goddess wrap</span><i></i><b>13.00</b></li>
-          <li><span>Caesar salad</span><i></i><b>11.00</b></li>
+          <li><span>Chicken Caesar wrap</span><em>Grilled or crispy chicken, romaine, cucumber, Caesar dressing</em></li>
+          <li><span>Chicken Goddess wrap</span><em>Kale, black beans, corn, pumpkin seeds, cotija, goddess dressing</em></li>
+          <li><span>Caesar salad</span><em>Romaine, cucumber, parmesan, house croutons</em></li>
         </ul>
-        <h3>Drinks</h3>
-        <ul>
-          <li><span>Iced matcha latte</span><i></i><b>6.50</b></li>
-          <li><span>Iced strawberry matcha</span><i></i><b>7.50</b></li>
-          <li><span>Iced blue coconut matcha</span><i></i><b>8.50</b></li>
-          <li><span>Monthly special matcha</span><i></i><b>8.50</b></li>
-          <li><span>Refreshers</span><i></i><b>5.75</b></li>
-          <li><span>Lemonade, black tea, Arnold Palmer</span><i></i><b>4.00</b></li>
+        <div class="coffee">
+          <img class="stamp" src="assets/obj/devocion-stamp.webp" alt="Devoción" width="900" height="228" loading="lazy">
+        <h3>Coffee</h3>
+        <ul class="plain">
+          <li><span>Drip</span></li>
+          <li><span>Espresso</span></li>
+          <li><span>Americano</span></li>
+          <li><span>Cortado</span></li>
+          <li><span>Cappuccino</span></li>
+          <li><span>Latte</span></li>
+          <li><span>Mocha</span></li>
+          <li><span>Cold brew</span></li>
+          <li><span>Horchata latte</span></li>
+          <li><span>Rose’s latte</span></li>
+          <li><span>Chai latte</span></li>
+          <li><span>Monthly special iced latte</span></li>
         </ul>
-        <p class="receipt__foot">Prices are for Harlem.<br>Flip the receipt for 550 Madison.<br>*** THANK YOU ***</p>
+          <p class="receipt__note">Espresso and drip are Devoción, Colombian beans. Whole bean bags at the counter.</p>
+        </div>
+        <h3>Matcha and more</h3>
+        <ul class="plain">
+          <li><span>Iced matcha latte</span></li>
+          <li><span>Iced strawberry matcha</span></li>
+          <li><span>Iced blue coconut matcha</span></li>
+          <li><span>Matcha lemonade</span></li>
+          <li><span>Monthly special matcha</span></li>
+          <li><span>Refreshers</span></li>
+          <li><span>Lemonade, black tea, Arnold Palmer</span></li>
+        </ul>
+        <p class="receipt__foot">Flip the receipt for 550 Madison.<br>*** THANK YOU ***</p>
         <a class="see" href="https://uptaco-harlem.square.site/">Order Harlem pickup →</a>
       </div>
         </div>
@@ -147,7 +171,7 @@
       <figure class="media__card"><video class="vid" data-src="assets/video/tacos.mp4" poster="assets/video/tacos.jpg" muted playsinline loop preload="none" aria-label="Breakfast tacos coming off the griddle"></video></figure>
       <div class="media__text">
         <p class="glow glow--sm" aria-hidden="true">the bec</p>
-        <p class="hl"><span>Applewood bacon, scrambled egg, cheddar and jack, and scallion in a flour tortilla. $6.50 at 550 Madison.</span></p>
+        <p class="hl"><span>Applewood bacon, scrambled egg, cheddar and jack, and scallion in a flour tortilla.</span></p>
         <button class="see" type="button" data-open-order>Order one →</button>
       </div>
     </section>
@@ -177,7 +201,7 @@
       <figure class="media__card"><video class="vid" data-src="assets/video/raffi.mp4" poster="assets/video/raffi.jpg" muted playsinline loop preload="none" aria-label="The Raffi burrito cut open"></video></figure>
       <div class="media__text">
         <p class="glow glow--sm" aria-hidden="true">the raffi</p>
-        <p class="hl"><span>Slow-smoked brisket, eggs, house-pickled onion, and potato, wrapped by hand in lilac paper. Raffi is our friend. He likes brisket a lot. $16 at 550 Madison.</span></p>
+        <p class="hl"><span>Slow-smoked brisket, eggs, house-pickled onion, and potato, wrapped by hand in lilac paper. Raffi is our friend. He likes brisket a lot.</span></p>
         <button class="see" type="button" data-open-order>Order one →</button>
       </div>
     </section>
@@ -192,7 +216,7 @@
       <figure class="media__card media__card--45"><video class="vid" data-src="assets/video/caesar-hd.mp4" poster="assets/video/caesar-hd.jpg" muted playsinline loop preload="none" aria-label="Chicken tossed with romaine, rolled, and cut in half"></video></figure>
       <div class="media__text">
         <p class="glow glow--sm" aria-hidden="true">the caesar</p>
-        <p class="hl"><span>Grilled or crispy chicken, with romaine, cucumber, croutons, and Caesar dressing, rolled in a flour tortilla. $14 at 550 Madison.</span></p>
+        <p class="hl"><span>Grilled or crispy chicken, with romaine, cucumber, croutons, and Caesar dressing, rolled in a flour tortilla.</span></p>
         <button class="see" type="button" data-open-order>Order one →</button>
       </div>
     </section>
@@ -207,8 +231,32 @@
       <figure class="media__card"><video class="vid" data-src="assets/video/strawberry-matcha.mp4" poster="assets/video/strawberry-matcha.jpg" muted playsinline loop preload="none" aria-label="Matcha poured over strawberry milk"></video></figure>
       <div class="media__text">
         <p class="glow glow--sm" aria-hidden="true">matcha</p>
-        <p class="hl"><span>Whisked to order and poured over strawberry milk, blue coconut milk, or plain. A new flavor every month. From $7 at 550 Madison.</span></p>
+        <p class="hl"><span>Whisked to order and poured over strawberry milk, blue coconut milk, or plain. A new flavor every month.</span></p>
         <button class="see" type="button" data-open-order>Order one →</button>
+      </div>
+    </section>
+
+    <!-- 4. Monthly specials -->
+    <section class="band" id="ch-specials" style="--c:var(--eggplant)" data-navc="#3d2136">
+      <span class="icon" style="--ar:.643"><span class="obj__sil" style="--m:url(assets/obj/specials-sil.webp)"></span><img class="obj__ink" src="assets/obj/specials-ink.webp" alt=""></span>
+      <h2 class="glow">monthly specials</h2>
+    </section>
+    <section class="media" data-navc="#02060d" aria-label="Ube matcha, the monthly matcha special">
+      <div class="media__bg"><video class="vid" data-src="assets/video/ube-matcha.mp4" poster="assets/video/ube-matcha.jpg" muted playsinline loop preload="none"></video></div>
+      <figure class="media__card"><video class="vid" data-src="assets/video/ube-matcha.mp4" poster="assets/video/ube-matcha.jpg" muted playsinline loop preload="none" aria-label="Matcha poured over purple ube milk"></video></figure>
+      <div class="media__text">
+        <p class="glow glow--sm" aria-hidden="true">ube matcha</p>
+        <p class="hl"><span>Matcha whisked to order and poured over ube milk. The matcha special changes every month, at both shops.</span></p>
+        <button class="see" type="button" data-open-order>Order one →</button>
+      </div>
+    </section>
+    <section class="media" data-navc="#02060d" aria-label="Grilled cheese and tomato soup">
+      <div class="media__bg"><video class="vid" data-src="assets/video/grilled-cheese-soup.mp4" poster="assets/video/grilled-cheese-soup.jpg" muted playsinline loop preload="none"></video></div>
+      <figure class="media__card"><video class="vid" data-src="assets/video/grilled-cheese-soup.mp4" poster="assets/video/grilled-cheese-soup.jpg" muted playsinline loop preload="none" aria-label="A grilled cheese dunked in a cup of tomato soup"></video></figure>
+      <div class="media__text">
+        <p class="glow glow--sm" aria-hidden="true">grilled cheese + soup</p>
+        <p class="hl"><span>Sourdough with cheddar, provolone, and American, and a cup of house-made tomato soup to dunk it in. On for the cold months.</span></p>
+        <button class="see" type="button" data-open-order>Order →</button>
       </div>
     </section>
 
